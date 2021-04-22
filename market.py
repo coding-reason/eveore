@@ -4,7 +4,15 @@ import requests
 import data
 
 marketUri = "https://esi.evetech.net/latest/markets/10000002/orders/?datasource=tranquility&order_type=sell&page=1&type_id="
-compressedOre={data.arkonor, data.primearkonor, data.crimsonarkonor}
+compressedOre=[data.arkonor, data.primearkonor, data.crimsonarkonor]
+
+for data in compressedOre:
+    id = data["id"]
+    uri = marketUri + str(id)
+    response = requests.get(url = uri).json()
+    print(response)
+
+
 
 groupUri = "https://esi.evetech.net/latest/universe/groups/?datasource=tranquility&page=1"
 # groups = requests.get(url=groupUri).json()
