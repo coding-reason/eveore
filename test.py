@@ -2,7 +2,9 @@
 
 import requests
 import data
-
+import eveBOM
+print(eveBOM.orca)
+exit
 marketUri = "https://esi.evetech.net/latest/markets/10000002/orders/?datasource=tranquility&order_type=sell&page=1&type_id="
 groupUri = "https://esi.evetech.net/latest/universe/groups/?datasource=tranquility&page=1"
 # groups = requests.get(url=groupUri).json()
